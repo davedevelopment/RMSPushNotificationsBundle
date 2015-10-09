@@ -60,6 +60,18 @@ class iOSMessageTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $msg->getMessageBody());
     }
 
+    public function testAPSCategoryAddedOK()
+    {
+        $expected = array(
+            "aps" => array(
+                "category" => "ACTIONABLE",
+            )
+        );
+        $msg = new iOSMessage();
+        $msg->setAPSCategory("ACTIONABLE");
+        $this->assertEquals($expected, $msg->getMessageBody());
+    }
+
     public function testCustomDataAddedOK()
     {
         $expected = array(
